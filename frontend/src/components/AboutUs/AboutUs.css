@@ -1,44 +1,57 @@
-/* Full-width background image with centered content */
 .app__about-us {
-    width: 100%;
-    height: 100vh; /* Full screen height */
-    background-image: url('../../assets/AboutUs.jpg');
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    color: white;
-    text-align: center; /* Ensures the text is centered */
-    padding: 0 20px; /* Adding some padding to avoid edge clipping */
+  display: flex;
+  justify-content: center;
+  background-image: url('../../assets/AboutUs.jpg');
+  background-size: cover; /* Ensures the background image covers the entire section */
+  background-position: center; /* Center the background image */
+  height: 60vh; /* Allow height to adjust based on content */
+  padding: 50px 20px; /* Add padding to create space around the text */
+  color: white; /* Ensure text is readable on the background */
+  overflow: hidden; /* Prevent any overflow issues */
+}
+
+.app__about-us-content {
+  max-width: 800px; /* Limit the width for better readability */
+  margin: 0 auto; /* Center the content */
+  text-align: center; /* Center-align the text */
+  font-size: 1.2em;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 20px; /* Add some space below the heading */
+}
+
+p {
+  line-height: 1.5; /* Improve line height for better readability */
+  overflow-wrap: break-word; /* Prevent overflow by breaking long words */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .app__about-us {
+      padding: 30px 15px; /* Reduce padding for smaller screens */
   }
-  
-  /* Styling the content in the center */
+
   .app__about-us-content {
-    max-width: 800px; /* Adjust width for readability */
+      padding: 0 10px; /* Add padding to the content */
   }
-  
-  /* Styling for the h2 */
-  .app__about-us-content h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+
+  h2 {
+      font-size: 1.5em; /* Adjust font size for smaller screens */
   }
-  
-  /* Styling for the p tag */
-  .app__about-us-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
+
+  p {
+      font-size: 1em; /* Adjust font size for smaller screens */
   }
-  
-  /* Responsive typography for smaller screens */
-  @media (max-width: 768px) {
-    .app__about-us-content h2 {
-      font-size: 2rem;
-    }
-  
-    .app__about-us-content p {
-      font-size: 1rem;
-    }
+}
+
+@media (max-width: 480px) {
+  h2 {
+      font-size: 1.2em; /* Further adjust font size for very small screens */
   }
-  
+
+  p {
+      font-size: 0.9em; /* Further adjust font size for very small screens */
+  }
+}
