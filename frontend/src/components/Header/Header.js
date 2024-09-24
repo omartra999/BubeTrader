@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Header.css';
-import images from '../../constants';
 
 function Header() {
   return (
