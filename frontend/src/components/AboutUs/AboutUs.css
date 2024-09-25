@@ -1,7 +1,7 @@
 .app__about-us {
   display: flex;
   justify-content: center;
-  background-image: url('../../assets/AboutUs.jpg');
+  background-image: url('../../assets/AboutUs.webp');
   background-size: cover; /* Ensures the background image covers the entire section */
   background-position: center; /* Center the background image */
   height: 60vh; /* Allow height to adjust based on content */

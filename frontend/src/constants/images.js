@@ -1,5 +1,5 @@
-import Header from '../assets/header.jpeg'
-import  AboutUs  from '../assets/AboutUs.jpg'
+import Header from '../assets/header.webp'
+import  AboutUs  from '../assets/AboutUs.webp'
 
 const images = {
     Header, AboutUs,
