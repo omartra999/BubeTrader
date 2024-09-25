@@ -55,6 +55,16 @@
     align-items: stretch; /* Stretch to fill available space */
 }
 
+.app__simulation-box input{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.app__simulation-box input{
+    -moz-appearance: textfield;
+    
+}
+
 /* Input Field Styles */
 .app__simulation-box input,
 .app__simulation-box select,

@@ -1,47 +1,96 @@
 .why-bube-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0.8); /* Lighter black than the Simulation section */
-    padding: 0; /* No padding */
-    color: white; /* Text color */
-    height: 40vh;
-    overflow: hidden; /* Ensure no overflow */
-  }
-  
-  .top-left-image {
-    position: absolute;
-    top: 0; /* Align with the top edge */
-    left: 0; /* Align with the left edge */
-    width: 100%; /* Image takes full width */
-    height: auto; /* Maintains aspect ratio */
-    max-width: 33.333333333333%; /* Set max width for image */
-  }
-  
-  .text-container {
-    text-align: center;
-    max-width: 33%; /* Control text container width */
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
-    padding: 0; /* Removed padding */
-    margin: 0; /* No margin */
-    z-index: 1; /* Ensure text is above images */
-    position: relative; /* Control overlap */
-    border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1b1b1b;
+  padding: 40px;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
 
-  }
+.text-container {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  width: 30%; /* Narrower width for more vertical text alignment */
+  text-align: center;
+  border-radius: 12px;
+  color: white;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 1.1rem; /* Adjust font size for more vertical space */
+  line-height: 1.8;  /* Increased line spacing */
+  margin: 0 auto ;
+}
+
+.text-container h2 {
+  color: #6b8eff;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.bull-image, .bear-image {
+  width: 34.333333333%; /* Adjusted width for better balance */
+  height: auto;
+  object-fit: cover;
+  position: relative;
+  border-radius: 25px;
+}
+
+.bull-image {
+  margin-right: 20px;
+}
+
+.bear-image {
+  margin-left: 20px;
+  transform: translateY(-20px); /* Shift bear image upwards slightly */
+}
+
+
+@media (max-width: 1024px) {
   
-  .text-container h2,
-  .text-container p {
-    margin-bottom: 10%; /* Remove margin to avoid space */
+.bull-image, .bear-image {
+  width: 34.333333333%; /* Adjusted width for better balance */
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 25px;
+}
+
+.bull-image {
+  top: 0;
+  left: 0;
+  margin-right: 20px;
+}
+
+.bear-image {
+  margin-left: 20px;
+  bottom: 0;
+  right: 0;
+  transform: translateY(-20px); /* Shift bear image upwards slightly */
+}
+
+}
+@media (max-width: 760px) {
+  .why-bube-container {
+    flex-direction: column;
+    padding: 20px;
   }
-  
-  .bottom-right-image {
-    position: absolute;
-    bottom: 0; /* Align with the bottom edge */
-    right: 0; /* Align with the right edge */
-    width: 100%; /* Image takes full width */
-    height: auto; /* Maintains aspect ratio */
-    max-width: 33.3333333%; /* Set max width for image */
+
+  .text-container {
+    width: 80%; /* Full width on smaller screens */
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
-  
+
+  .bull-image, .bear-image {
+    display: none;
+  }
+
+  .bear-image {
+    display: none;
+    transform: translateY(0); /* Reset transformation on smaller screens */
+  }
+}

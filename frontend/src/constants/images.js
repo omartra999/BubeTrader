@@ -1,6 +1,6 @@
 import Header from '../assets/header.webp'
 import  AboutUs  from '../assets/AboutUs.webp'
-import Bull from '../assets/bull.jpg'
+import Bull from '../assets/bull.png'
 import Bear from '../assets/bear.jpg'
 
 const images = {
