@@ -232,6 +232,24 @@ textarea:focus {
     border: 2px solid white;
     border-radius: 10px;
 }
+.thank-you-message, .error-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .thank-you-message {
+    background-color: #4caf50; /* Green background */
+    border: 1px solid #388e3c; /* Darker green border */
+  }
+  
+  .error-message {
+    background-color: #f44336; /* Red background */
+    border: 1px solid #c62828; /* Darker red border */
+  }
 
 /* Mobile and Tablet Styles */
 @media (max-width: 768px) {

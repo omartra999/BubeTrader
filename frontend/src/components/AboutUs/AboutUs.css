@@ -16,6 +16,8 @@
   text-align: center; /* Center-align the text */
   font-size: 1.2em;
   margin: auto;
+  background-color: rgba(0, 0, 0, 0.767);
+  border-radius: 8px;
 }
 
 h2 {

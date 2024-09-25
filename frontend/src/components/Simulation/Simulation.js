@@ -13,6 +13,9 @@ function Simulation() {
     phone: ''
   });
 
+  const [thankYouMessage, setThankYouMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState(''); // State for error message
+
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -21,16 +24,42 @@ function Simulation() {
     setFormData({ ...formData, option });
   };
 
+  const validateEmail = (email) => {
+    // Simple regex for email validation
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    setErrorMessage(''); // Reset error message on submit
 
+    // Validate form data
+    if (formData.amount < 100) {
+      setErrorMessage("The least amount is 100.");
+      return;
+    }
+
+    if (!formData.name || !formData.email || !formData.phone || !formData.firstTimeTrading || !formData.option) {
+      setErrorMessage("Please fill out all fields.");
+      return;
+    }
+
+    if (!validateEmail(formData.email)) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
+    }
+
+    // Send email
     emailjs.send(
-      'your_service_id',
-      'your_template_id',
+      'service_4x6n3tk',  // replace with your service ID
+      'template_7o3svrm', // replace with your template ID
       formData,
-      'your_user_id'
+      'vyhK61HdfIvBSMSXN' // replace with your user ID
     ).then((result) => {
       console.log('Email sent successfully:', result.text);
+      setThankYouMessage("Thank you for your request, you will soon be contacted by our team.");
+      setFormData({ amount: 100, option: '', name: '', email: '', firstTimeTrading: '', phone: '' }); // Reset form data
     }, (error) => {
       console.log('Failed to send email:', error.text);
     });
@@ -82,16 +111,16 @@ function Simulation() {
           <div className="app__simulation-box app__simulation-option-box">
             <h3>Return of 5% to 10% per month</h3>
             <div 
-              className={`option-box ${formData.option === 'Option 1' ? 'selected' : ''}`}
-              onClick={() => handleOptionClick('Option 1')}
+              className={`option-box ${formData.option === 'Conservative Style' ? 'selected' : ''}`}
+              onClick={() => handleOptionClick('Conservative Style')}
             >
               <p>Conservative Style</p>
             </div>
 
             <h3>Return of 9% to 30% per month</h3>
             <div 
-              className={`option-box ${formData.option === 'Option 2' ? 'selected' : ''}`}
-              onClick={() => handleOptionClick('Option 2')}
+              className={`option-box ${formData.option === 'Moderate Style' ? 'selected' : ''}`}
+              onClick={() => handleOptionClick('Moderate Style')}
             >
               <p>Moderate Style</p>
             </div>
@@ -129,7 +158,7 @@ function Simulation() {
             <input
               type="tel"
               name="phone"
-              placeholder="Phone Number"
+              placeholder="Phone Number (e.g., +491234567890)"
               value={formData.phone}
               onChange={handleInputChange}
               required
@@ -162,6 +191,30 @@ function Simulation() {
       >
         Ready! I want to know the best wallet for me
       </motion.button>
+
+      {/* Thank You Message */}
+      {thankYouMessage && (
+        <motion.div 
+          className="thank-you-message"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5 }}
+        >
+          {thankYouMessage}
+        </motion.div>
+      )}
+
+      {/* Error Message */}
+      {errorMessage && (
+        <motion.div 
+          className="error-message"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5 }}
+        >
+          {errorMessage}
+        </motion.div>
+      )}
     </div>
   );
 }
