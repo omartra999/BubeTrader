@@ -34,7 +34,7 @@
 .bull-image, .bear-image {
   width: 34.333333333%; /* Adjusted width for better balance */
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   position: relative;
   border-radius: 25px;
 }

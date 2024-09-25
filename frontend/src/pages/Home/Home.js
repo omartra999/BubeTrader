@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, AboutUs, Simulation, WhyBube } from '../../components'
+import { Header, AboutUs, Simulation, WhyBube, Contact } from '../../components'
 
 function Home() {
   return (
@@ -8,6 +8,7 @@ function Home() {
         <AboutUs />
         <Simulation />
         <WhyBube />
+        <Contact />
 
     </div>
   )
