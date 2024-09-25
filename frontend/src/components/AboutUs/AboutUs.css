@@ -47,6 +47,9 @@ p {
 }
 
 @media (max-width: 480px) {
+  .app__about-us{
+    height: max-content;
+  }
   h2 {
       font-size: 1.2em; /* Further adjust font size for very small screens */
   }

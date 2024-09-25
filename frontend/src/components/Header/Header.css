@@ -48,6 +48,6 @@
 @media (max-width: 360px) {
   .app__header{
   background-size: contain;
-  height: 50vh;
+  height: 70vh;
   }
 }
