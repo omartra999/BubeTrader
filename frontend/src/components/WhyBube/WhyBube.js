@@ -1,32 +1,29 @@
-import React, { useEffect } from 'react';
-import { useAnimation, motion } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import './WhyBube.css';
 import images from '../../constants';
 
 function WhyBube() {
-  const controls = useAnimation();
   const [ref, inView] = useInView({
     threshold: 0.2, // Trigger the animation when 20% of the component is visible
+    triggerOnce: false, // Allow animation to trigger every time the element comes into view
   });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8, ease: 'easeOut' },
-      });
-    }
-  }, [controls, inView]);
 
   return (
     <div className="why-bube-container">
-      <img src={images.Bull} alt="Bull" className="bull-image" />
+      <motion.img
+        src={images.Bull}
+        alt="Bull"
+        className="bull-image"
+        whileHover={{ scale: 1.1 }} // Scale up on hover
+        transition={{ duration: 0.3 }}
+      />
       <motion.div
         ref={ref}
         initial={{ opacity: 0, y: 50 }}
-        animate={controls}
+        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
         className="text-container"
       >
         <h2>Why the name BUBE?</h2>
@@ -38,7 +35,13 @@ function WhyBube() {
           and “Bears” are selling or expecting a drop.
         </p>
       </motion.div>
-      <img src={images.Bear} alt="Bear" className="bear-image" />
+      <motion.img
+        src={images.Bear}
+        alt="Bear"
+        className="bear-image"
+        whileHover={{ scale: 1.1 }} // Scale up on hover
+        transition={{ duration: 0.3 }}
+      />
     </div>
   );
 }

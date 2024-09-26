@@ -282,8 +282,8 @@ textarea:focus {
     }
 
     .app__simulation-circle {
-        width: 120px; /* Smaller circles */
-        height: 120px;
+        width: 200px; /* Smaller circles */
+        height: 200px;
     }
 
     .app__simulation-box {

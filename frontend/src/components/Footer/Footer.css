@@ -1,0 +1,20 @@
+.app__footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .app__footer a {
+    color: #4db8ff; /* Light blue color for the email link */
+    text-decoration: none;
+  }
+  
+  .app__footer a:hover {
+    text-decoration: underline; /* Underline the link on hover */
+  }
+  

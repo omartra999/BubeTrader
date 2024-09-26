@@ -14,7 +14,7 @@ function Simulation() {
   });
 
   const [thankYouMessage, setThankYouMessage] = useState('');
-  const [errorMessage, setErrorMessage] = useState(''); // State for error message
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,14 +25,13 @@ function Simulation() {
   };
 
   const validateEmail = (email) => {
-    // Simple regex for email validation
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(String(email).toLowerCase());
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setErrorMessage(''); // Reset error message on submit
+    setErrorMessage('');
 
     // Validate form data
     if (formData.amount < 100) {
@@ -52,27 +51,37 @@ function Simulation() {
 
     // Send email
     emailjs.send(
-      'service_4x6n3tk',  // replace with your service ID
-      'template_7o3svrm', // replace with your template ID
+      'service_4x6n3tk',
+      'template_7o3svrm',
       formData,
-      'vyhK61HdfIvBSMSXN' // replace with your user ID
+      'vyhK61HdfIvBSMSXN'
     ).then((result) => {
       console.log('Email sent successfully:', result.text);
       setThankYouMessage("Thank you for your request, you will soon be contacted by our team.");
-      setFormData({ amount: 100, option: '', name: '', email: '', firstTimeTrading: '', phone: '' }); // Reset form data
+      setFormData({ amount: 100, option: '', name: '', email: '', firstTimeTrading: '', phone: '' });
     }, (error) => {
       console.log('Failed to send email:', error.text);
     });
   };
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const isInView = useInView(ref, { once: false }); // Set to false to trigger on every scroll
+
+  // Animation variants
+  const variants = {
+    inView: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    outOfView: { opacity: 0, scale: 0.9, transition: { duration: 0.5 } }
+  };
 
   return (
-    <div className="app__simulation" ref={ref}>
+    <motion.div 
+      className="app__simulation" 
+      ref={ref}
+      variants={variants}
+      animate={isInView ? 'inView' : 'outOfView'}
+    >
       <h2>Simulate the ideal investment for you</h2>
 
-      {/* Circles and Boxes */}
       <div className="app__simulation-wrapper">
         {/* First Box: Amount */}
         <div className="app__simulation-section">
@@ -93,7 +102,7 @@ function Simulation() {
               min="100"
               onChange={handleInputChange}
               required
-            /> 
+            />
             amount in Euro
           </div>
         </div>
@@ -215,7 +224,7 @@ function Simulation() {
           {errorMessage}
         </motion.div>
       )}
-    </div>
+    </motion.div>
   );
 }
 
