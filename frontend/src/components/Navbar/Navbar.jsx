@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import images from '../../constants/images';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <a href="#header">Logo</a>
+        <a href="#header"><img src={images.Logo} alt='logo'></img></a>
       </div>
       <ul className={`navbar-links ${isOpen ? 'open' : ''}`}>
         <li><a href="#header" onClick={() => setIsOpen(false)}>Home</a></li>
