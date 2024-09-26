@@ -17,7 +17,7 @@
 .navbar-logo img {
     width: 20%;
     background-color: rgb(255, 255, 255);
-    height: fit-content;
+    height: auto;
     border-radius: 50%;
     margin: auto;
     margin-left: 10%;
