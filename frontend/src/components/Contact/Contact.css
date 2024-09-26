@@ -1,0 +1,71 @@
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left; /* Center align text */
+    align-items: start;
+    justify-content: center;
+    padding: 20px;
+    background-image: url('../../assets/background.webp');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    color: white; /* Match text color to screenshot */
+    margin: auto; /* Center on the page */
+}
+
+h2 {
+    font-size: 2rem; /* Responsive font size */
+    font-weight: bold;
+    color: #6b8eff;
+    margin-bottom: 15px; /* Add some spacing below */
+}
+
+p {
+    font-size: 1.125rem; /* Responsive font size */
+    margin-bottom: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin-top: 15px; /* Add space above icons */
+}
+
+.social-icons a {
+    margin: 0 15px; /* Adjust margin for better spacing */
+    color: #333; /* Set the color for the icons */
+    transition: color 0.3s ease, transform 0.3s ease; /* Add transform transition */
+    font-size: 1.5rem; /* Increase icon size */
+}
+
+.social-icons a:hover {
+    color: #007bff; /* Change the color on hover */
+    transform: scale(1.1); /* Scale up on hover for effect */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .contact-container {
+        height: auto; /* Allow height to adjust on smaller screens */
+        padding: 15px; /* Reduce padding */
+        text-align: center;
+        align-items: center;
+    }
+    
+    h2 {
+        font-size: 1.8rem; /* Smaller font size for h2 */
+    }
+
+    p {
+        font-size: 1rem; /* Smaller font size for paragraphs */
+    }
+
+    .social-icons a {
+        font-size: 1.25rem; /* Smaller icon size */
+    }
+}

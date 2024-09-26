@@ -1,0 +1,321 @@
+.app__simulation {
+    background-color: #121212; /* Dark Gray background */
+    color: #E0E0E0; /* Light Gray text */
+    padding: 50px;
+    text-align: center;
+}
+
+.app__simulation h2 {
+    color: #007BFF; /* Bright Blue for header */
+    margin-bottom: 40px;
+}
+
+.app__simulation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.app__simulation-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%; /* Ensures all sections are equal width */
+    min-width: 250px; /* To make sure the boxes are big enough on smaller screens */
+}
+
+.app__simulation-circle {
+    background-color: #00A3E0; /* Lighter Blue for circles */
+    color: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s; /* Smooth transition for circle animation */
+}
+
+.app__simulation-circle:hover {
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+/* Box Styles */
+.app__simulation-box {
+    background-color: #1D1D1D; /* Darker Gray for box background */
+    border: 2px solid #FFFFFF; /* White border */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px; /* Padding inside boxes */
+    width: 250px; /* Fixed width for consistency */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Column layout */
+    align-items: stretch; /* Stretch to fill available space */
+}
+
+.app__simulation-box input{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.app__simulation-box input{
+    -moz-appearance: textfield;
+    
+}
+
+/* Input Field Styles */
+.app__simulation-box input,
+.app__simulation-box select,
+.app__simulation-box textarea {
+    padding: 12px; /* Padding inside inputs */
+    margin-top: 10px; /* Space above inputs */
+    border: 2px solid #FFFFFF; /* White border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background */
+    color: #E0E0E0; /* Light Gray for text */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s ease; /* Transition for smooth effects */
+}
+
+.app__simulation-box input:focus,
+.app__simulation-box select:focus,
+.app__simulation-box textarea:focus {
+    outline: none; /* Remove outline */
+    background-color: rgba(255, 255, 255, 0.2); /* Darker background on focus */
+}
+
+/* Select Box Styles */
+.app__simulation-box select {
+    appearance: none; /* Remove default styling */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-position: right 10px center; /* Position the arrow */
+    background-size: 12px; /* Size of the arrow */
+    padding-right: 40px; /* Space for the arrow */
+}
+.app__simulation-box select option {
+    color: #000; /* Black for options */
+}
+.app__simulation-option-box {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.option-box {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-box:hover {
+    background-color: #444;
+}
+
+.option-box.selected {
+    border-color: #007BFF;
+    background-color: #007BFF;
+    color: white;
+}
+
+.option-box p {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #E0E0E0;
+}
+
+/* Textarea Styles */
+.app__simulation-box textarea {
+    height: 100px; /* Fixed height for textarea */
+    resize: none; /* Prevent resizing */
+}
+
+/* Button Styles */
+.app__simulation-submit {
+    background-color: #007BFF; /* Bright Blue background color */
+    color: white; /* Button text color */
+    font-size: 20px; /* Button font size */
+    padding: 15px 30px; /* Padding around the text */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for smooth effects */
+    margin-top: 20px; /* Space above the button */
+    width: 100%; /* Full width */
+}
+
+.app__simulation-submit:hover {
+    background-color: darkblue; /* Darker color on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* General styling for input fields */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    background-color: #222; /* Matches the black theme */
+    color: #E0E0E0; /* Light Gray for text */
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder {
+    color: #bbb; /* Lighter color for placeholder text */
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Focus effect */
+input:focus,
+select:focus {
+    border-color: #007BFF; /* Bright Blue on focus */
+    box-shadow: 0 0 8px #007BFF; /* Glow effect */
+}
+
+/* Style for radio buttons and their labels */
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+    color: #E0E0E0; /* Light Gray for labels */
+}
+
+select {
+    background-color: #222; /* Matches the black theme */
+    color: white; /* Text color for options */
+    border-radius: 8px;
+}
+
+/* Specific styling for larger input fields */
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 2px solid #ccc;
+    background-color: #222; /* Matches the dark theme */
+    color: #E0E0E0; /* Light Gray for text */
+    resize: none; /* Disable resizing for consistency */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Focus effect for textareas */
+textarea:focus {
+    border-color: #007BFF; /* Bright Blue on focus */
+    box-shadow: 0 0 8px #007BFF; /* Glow effect */
+}
+
+/* Make sure form fields are aligned properly in their box */
+.app__simulation-box input,
+.app__simulation-box select {
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+/* Add some padding around the boxes for a better look */
+.app__simulation-box {
+    padding: 20px;
+    background-color: #222; /* Matches the dark theme of the section */
+    border: 2px solid white;
+    border-radius: 10px;
+}
+.thank-you-message, .error-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .thank-you-message {
+    background-color: #4caf50; /* Green background */
+    border: 1px solid #388e3c; /* Darker green border */
+  }
+  
+  .error-message {
+    background-color: #f44336; /* Red background */
+    border: 1px solid #c62828; /* Darker red border */
+  }
+
+/* Mobile and Tablet Styles */
+@media (max-width: 768px) {
+    .app__simulation {
+        padding: 20px; /* Further reduce padding */
+    }
+
+    .app__simulation h2 {
+        font-size: 1.6rem; /* Smaller header font size */
+        margin-bottom: 25px;
+    }
+
+    .app__simulation-wrapper {
+        flex-direction: column; /* Stack sections vertically */
+        gap: 15px; /* Smaller gap between sections */
+    }
+
+    .app__simulation-section {
+        width: 100%; /* Full width for sections */
+    }
+
+    .app__simulation-circle {
+        width: 200px; /* Smaller circles */
+        height: 200px;
+    }
+
+    .app__simulation-box {
+        padding: 15px; /* Reduced padding for mobile */
+    }
+
+    .app__simulation-submit {
+        padding: 12px 20px;
+        font-size: 16px; /* Smaller font size for submit button */
+    }
+}
+
+@media (max-width: 480px) {
+    .app__simulation h2 {
+        font-size: 1.4rem; /* Further reduce header size for very small screens */
+        margin-bottom: 20px;
+    }
+
+    .app__simulation-circle {
+        width: 160px; /* Smaller circles for small screens */
+        height: 160px;
+    }
+
+    .app__simulation-box input,
+    .app__simulation-box select,
+    .app__simulation-box textarea {
+        font-size: 12px; /* Even smaller font size for input fields */
+        padding: 8px; /* Smaller padding for fields */
+    }
+
+    .app__simulation-submit {
+        padding: 10px 15px;
+        font-size: 14px; /* Smaller submit button font size */
+    }
+}

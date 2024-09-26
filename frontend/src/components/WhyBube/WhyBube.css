@@ -1,0 +1,102 @@
+.why-bube-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1b1b1b;
+  padding: 40px;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.text-container {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  width: 30%; /* Narrower width for more vertical text alignment */
+  text-align: center;
+  border-radius: 12px;
+  color: white;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  font-size: 1.1rem; /* Adjust font size for more vertical space */
+  line-height: 1.8;  /* Increased line spacing */
+  margin-right: 34.333333333%;
+}
+
+.text-container h2 {
+  color: #6b8eff;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+}
+
+.bull-image {
+  width: 34.333333333%; /* Adjusted width for better balance */
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  border-radius: 25px;
+}
+
+.bull-image {
+  margin-right: 20px;
+}
+
+.bear-image {
+  bottom: 0; /* Stick the bear image to the bottom */
+  right: 0;  /* Align it to the right corner */
+  border-radius: 25px;
+  width: 34.3333333333%;
+  transform: translateY(0); /* Reset transformation */
+  position: absolute;
+}
+
+
+@media (max-width: 1024px) {
+  
+.bull-image, .bear-image {
+  width: 34.333333333%; /* Adjusted width for better balance */
+  height: auto;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 25px;
+}
+.text-container{
+  margin: 0 auto;
+}
+.bull-image {
+  top: 0;
+  left: 0;
+  margin-right: 20px;
+}
+
+.bear-image {
+  margin-left: 20px;
+  bottom: 0;
+  right: 0;
+  transform: translateY(-20px); /* Shift bear image upwards slightly */
+}
+
+}
+@media (max-width: 760px) {
+  .why-bube-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .text-container {
+    width: 80%; /* Full width on smaller screens */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .bull-image, .bear-image {
+    display: none;
+  }
+
+  .bear-image {
+    display: none;
+    transform: translateY(0); /* Reset transformation on smaller screens */
+  }
+}
