@@ -173,7 +173,7 @@ function Simulation() {
               required
             />
             <label>
-              First time trading?
+              First time trading with Bube?
               <select
                 name="firstTimeTrading"
                 value={formData.firstTimeTrading}
