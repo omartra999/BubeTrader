@@ -1,102 +1,79 @@
-.why-bube-container {
+.WhyBube-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: #1b1b1b;
-  padding: 40px;
+  flex-wrap: wrap;
+  padding: 20px;
+  background-color: #1b1b1b; /* Background restored */
+  color: white;
+}
+
+.WhyBube-container h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #1e8bf6; /* Matching blue color for the header */
+}
+
+.leftside, .middle, .rightside {
+  flex: 1;
+  margin: 10px;
+  padding: 15px;
+  max-width: 300px;
+}
+
+.leftside img, .rightside img {
+  width: 100%; /* Match image sizes */
   height: auto;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border-radius: 15px; /* Rounded corners for images */
 }
 
 .text-container {
-  background-color: rgba(255, 255, 255, 0.15);
-  padding: 20px;
-  width: 30%; /* Narrower width for more vertical text alignment */
-  text-align: center;
-  border-radius: 12px;
-  color: white;
-  z-index: 2;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  font-size: 1.1rem; /* Adjust font size for more vertical space */
-  line-height: 1.8;  /* Increased line spacing */
-  margin-right: 34.333333333%;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: white; /* White text for good contrast */
+  background-color: rgba(68, 66, 66, 0.8); /* Dark semi-transparent background */
+  padding: 15px;
+  border-radius: 10px; /* Rounded corners for the text containers */
 }
 
-.text-container h2 {
-  color: #6b8eff;
-  margin-bottom: 15px;
-  font-size: 1.8rem;
+.leftside, .rightside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.bull-image {
-  width: 34.333333333%; /* Adjusted width for better balance */
-  height: auto;
-  object-fit: contain;
-  position: relative;
-  border-radius: 25px;
+.middle {
+  flex-grow: 2;
+  margin: 0 20px; /* Spacing for the middle section */
 }
 
-.bull-image {
-  margin-right: 20px;
+.middle .text-container {
+  text-align: left;
 }
 
-.bear-image {
-  bottom: 0; /* Stick the bear image to the bottom */
-  right: 0;  /* Align it to the right corner */
-  border-radius: 25px;
-  width: 34.3333333333%;
-  transform: translateY(0); /* Reset transformation */
-  position: absolute;
-}
-
-
-@media (max-width: 1024px) {
-  
-.bull-image, .bear-image {
-  width: 34.333333333%; /* Adjusted width for better balance */
-  height: auto;
-  object-fit: cover;
-  position: absolute;
-  border-radius: 25px;
-}
-.text-container{
-  margin: 0 auto;
-}
-.bull-image {
-  top: 0;
-  left: 0;
-  margin-right: 20px;
-}
-
-.bear-image {
-  margin-left: 20px;
-  bottom: 0;
-  right: 0;
-  transform: translateY(-20px); /* Shift bear image upwards slightly */
-}
-
-}
-@media (max-width: 760px) {
-  .why-bube-container {
+@media (max-width: 768px) {
+  .WhyBube-container {
     flex-direction: column;
-    padding: 20px;
   }
 
+  .leftside, .middle, .rightside {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 768px) {
   .text-container {
-    width: 80%; /* Full width on smaller screens */
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding: 10px; /* Reduce padding for mobile */
+    font-size: 0.9rem; /* Slightly smaller font size */
   }
 
-  .bull-image, .bear-image {
-    display: none;
-  }
-
-  .bear-image {
-    display: none;
-    transform: translateY(0); /* Reset transformation on smaller screens */
+  .leftside, .middle, .rightside {
+    margin: 5px 0; /* Reduced margin for mobile */
+    max-width: 100%; /* Ensures full width on mobile */
   }
 }

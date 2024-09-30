@@ -1,47 +1,62 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import './WhyBube.css';
+import { useInView } from 'react-intersection-observer'; // Import the hook
 import images from '../../constants';
+import './WhyBube.css';
 
 function WhyBube() {
-  const [ref, inView] = useInView({
-    threshold: 0.2, // Trigger the animation when 20% of the component is visible
-    triggerOnce: false, // Allow animation to trigger every time the element comes into view
-  });
+  // Create refs for each section
+  const { ref: leftRef, inView: leftInView } = useInView({ triggerOnce: false });
+  const { ref: middleRef, inView: middleInView } = useInView({ triggerOnce: false });
+  const { ref: rightRef, inView: rightInView } = useInView({ triggerOnce: false });
 
   return (
-    <div className="why-bube-container">
-      <motion.img
-        src={images.Bull}
-        alt="Bull"
-        className="bull-image"
-        whileHover={{ scale: 1.1 }} // Scale up on hover
-        transition={{ duration: 0.3 }}
-      />
-      <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 50 }}
-        animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="text-container"
-      >
-        <h2>Why the name BUBE?</h2>
-        <p>
-          The bull attacks by raising its head and horns in an upward movement.<br />
-          However, the bear attacks in the opposite direction.<br /> It uses its paws to
-          attack from top to bottom.<br /> These expressions are widely used in market analysis
-          and investor behavior,<br /> where “Bulls” are buying shares,<br /> expecting appreciation,
-          and “Bears” are selling or expecting a drop.
-        </p>
-      </motion.div>
-      <motion.img
-        src={images.Bear}
-        alt="Bear"
-        className="bear-image"
-        whileHover={{ scale: 1.1 }} // Scale up on hover
-        transition={{ duration: 0.3 }}
-      />
+    <div className='WhyBube-container'>
+      <h1>Why the name BUBE?</h1>
+      <div className='leftside'>
+        <img className='bull-image' src={images.Bull} alt='Bull' />
+        <motion.p
+          className='text-container'
+          ref={leftRef} // Set the ref
+          initial={{ scale: 0.8, opacity: 0 }} // Start small and invisible
+          animate={{ scale: leftInView ? 1 : 0.8, opacity: leftInView ? 1 : 0 }} // Trigger based on inView
+          transition={{ duration: 0.6, ease: 'easeInOut' }} // Smooth transition
+        >
+          The "BUll" comes from the way this animal attacks, throwing its horns
+          from the bottom up. In other words, there is an expectation of an
+          increase.
+        </motion.p>
+      </div>
+      <div className='middle'>
+        <motion.p
+          className='text-container'
+          ref={middleRef} // Set the ref
+          initial={{ scale: 0.8, opacity: 0 }} // Start small and invisible
+          animate={{ scale: middleInView ? 1 : 0.8, opacity: middleInView ? 1 : 0 }} // Trigger based on inView
+          transition={{ duration: 0.6, ease: 'easeInOut' }} // Smooth transition
+        >
+          In the world of trading and financial markets, the terms Bull and Bear are
+          used to describe market trends and investor behavior. Each represents a
+          predominant directional state. These terms are widely used by
+          analysts and traders to understand and discuss the dynamics of the
+          financial markets and help guide investment decisions in different
+          scenarios.
+        </motion.p>
+      </div>
+      <div className='rightside'>
+        <motion.p
+          className='text-container'
+          ref={rightRef} // Set the ref
+          initial={{ scale: 0.8, opacity: 0 }} // Start small and invisible
+          animate={{ scale: rightInView ? 1 : 0.8, opacity: rightInView ? 1 : 0 }} // Trigger based on inView
+          transition={{ duration: 0.6, ease: 'easeInOut' }} // Smooth transition
+        >
+          The "BEar" comes from the way this animal attacks, pushing its
+          paws from top to bottom. In other words, there is an expectation of
+          decline.
+        </motion.p>
+        <img src={images.Bear} alt='Bear' className='bear-image' />
+      </div>
     </div>
   );
 }

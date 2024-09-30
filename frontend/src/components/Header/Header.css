@@ -22,7 +22,7 @@
   .app__header-content a{
     background-color: #007BFF; /* Bright Blue background color */
     color: white; /* Button text color */
-    font-size: 20px; /* Button font size */
+    font-size: 0.9rem; /* Button font size */
     padding: 15px 30px; /* Padding around the text */
     border: none; /* Remove border */
     border-radius: 8px; /* Rounded corners */
