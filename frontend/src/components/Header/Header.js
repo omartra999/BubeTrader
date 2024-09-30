@@ -13,7 +13,7 @@ function Header() {
         >
           Some days <br />Bull,<br /> some days Bear, but <br /> always<br /> Trader.
         </motion.h1>
-        <p>Get a wallet personalized to your investor profile</p>
+        <a href='#simulation'>Get a wallet personalized to your investor profile</a>
       </div>
     </div>
   );

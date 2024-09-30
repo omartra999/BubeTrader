@@ -16,15 +16,25 @@
   .app__header-content {
     text-align: center;
   }
-  
-  /* Positioning the p in the bottom left corner */
-  .app__header-content p {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    font-size: 1.2rem;
-    margin: 0;
-    z-index: 1;
+  .app__header-content h1{
+    font-size: 4rem;
+  }
+  .app__header-content a{
+    background-color: #007BFF; /* Bright Blue background color */
+    color: white; /* Button text color */
+    font-size: 20px; /* Button font size */
+    padding: 15px 30px; /* Padding around the text */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition for smooth effects */
+    margin-top: 20px; /* Space above the button */
+    width: 100%; /* Full width */
+  }
+
+  .app__header-content a:hover{
+    background-color: darkblue; /* Darker color on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
   }
   
   /* Responsive typography for smaller screens */
