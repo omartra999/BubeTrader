@@ -81,7 +81,7 @@ function Simulation() {
       animate={isInView ? 'inView' : 'outOfView'}
     >
       <h2>Simulate the ideal investment for you</h2>
-
+      <p>fields with * are mandatory</p>
       <div className="app__simulation-wrapper">
         {/* First Box: Amount */}
         <div className="app__simulation-section">
@@ -94,7 +94,7 @@ function Simulation() {
             What amount do you want to start with?
           </motion.div>
           <div className="app__simulation-box">
-            <h3>Think about your future and what you want to achieve:</h3>
+            <h3>Think about your future and what you want to achieve: *</h3>
             <input
               type="number"
               name="amount"
@@ -103,7 +103,7 @@ function Simulation() {
               onChange={handleInputChange}
               required
             />
-            amount in Euro
+            amount in Euro(minimum amount: 100EU)
           </div>
         </div>
 
@@ -118,6 +118,7 @@ function Simulation() {
             How can we make you happy and at ease?
           </motion.div>
           <div className="app__simulation-box app__simulation-option-box">
+        
             <h3>Return of 5% to 10% per month</h3>
             <div 
               className={`option-box ${formData.option === 'Conservative Style' ? 'selected' : ''}`}
@@ -147,7 +148,7 @@ function Simulation() {
             We want to create a personalized wallet for you
           </motion.div>
           <div className="app__simulation-box">
-            <h3>Personal Information:</h3>
+            <h3>Personal Information: *</h3>
             <input
               type="text"
               name="name"
@@ -173,7 +174,7 @@ function Simulation() {
               required
             />
             <label>
-              First time trading with Bube?
+              First time investing with Trading?
               <select
                 name="firstTimeTrading"
                 value={formData.firstTimeTrading}

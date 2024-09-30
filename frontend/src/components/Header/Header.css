@@ -20,6 +20,7 @@
     font-size: 4rem;
   }
   .app__header-content a{
+    text-decoration: none;
     background-color: #007BFF; /* Bright Blue background color */
     color: white; /* Button text color */
     font-size: 0.9rem; /* Button font size */

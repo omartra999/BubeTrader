@@ -1,71 +1,116 @@
 .contact-container {
-    display: flex;
-    flex-direction: column;
-    text-align: left; /* Center align text */
-    align-items: start;
-    justify-content: center;
-    padding: 20px;
     background-image: url('../../assets/background.webp');
-    background-size: cover;
-    background-position: center;
-    height: 50vh;
-    color: white; /* Match text color to screenshot */
-    margin: auto; /* Center on the page */
-}
-
-h2 {
-    font-size: 2rem; /* Responsive font size */
-    font-weight: bold;
-    color: #6b8eff;
-    margin-bottom: 15px; /* Add some spacing below */
-}
-
-p {
-    font-size: 1.125rem; /* Responsive font size */
-    margin-bottom: 10px;
-}
-
-a {
+    background-size: cover; /* Make the background cover the whole container */
+    background-position: center; /* Center the background image */
+    padding: 40px; /* Add padding for spacing */
+    color: white; /* Default text color for better contrast */
+  }
+  
+  h2 {
+    text-align: center; /* Center the main title */
+    color: #6b8eff; /* Title color */
+    margin-bottom: 30px; /* Space below the title */
+  }
+  
+  .contact-item {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Set direction to row */
+    align-items: flex-start; /* Align items to the top */
+    padding: 15px; /* Padding inside each contact item */
+  }
+  
+  .contact-item h3 {
+    color: #6b8eff; /* Color for headings */
+    margin-bottom: 5px; /* Reduced space below the headings */
+    flex: 0 0 150px; /* Set fixed width for headings */
+  }
+  
+  .number-item {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    margin-left: 20px; /* Space between heading and numbers */
+  }
+  
+  .name {
+    font-size: 1.3em; /* Make the name bigger */
+    font-weight: bold; /* Bold text for names */
+    margin-bottom: 5px; /* Space below the name */
+  }
+  
+  .role {
+    font-size: 0.85em; /* Make the role smaller */
+    color: #b0b0b0; /* A lighter color for the role */
+    margin-top: 2px; /* Space above the role */
+  }
+  
+  .social-icons {
+    display: flex; /* Use flexbox for social icons */
+    align-items: center; /* Center icons and text vertically */
+    margin-top: 10px; /* Space above the social icons */
+  }
+  
+  .social-icons a {
+    color: #6b8eff; /* Icon color */
+    margin-right: 15px; /* Space between icon and text */
+  }
+  
+  .social-icons p {
+    margin: 0; /* Remove default margin for paragraph */
+    max-width: 400px; /* Limit width of social text */
+  }
+  
+  .contact-item a{
+    margin: auto 0;
     color: white;
-    text-decoration: none;
-}
+  }
 
-.social-icons {
-    display: flex;
-    justify-content: center; /* Center the icons */
-    margin-top: 15px; /* Add space above icons */
-}
-
-.social-icons a {
-    margin: 0 15px; /* Adjust margin for better spacing */
-    color: #333; /* Set the color for the icons */
-    transition: color 0.3s ease, transform 0.3s ease; /* Add transform transition */
-    font-size: 1.5rem; /* Increase icon size */
-}
-
-.social-icons a:hover {
-    color: #007bff; /* Change the color on hover */
-    transform: scale(1.1); /* Scale up on hover for effect */
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .contact-container {
-        height: auto; /* Allow height to adjust on smaller screens */
-        padding: 15px; /* Reduce padding */
-        text-align: center;
-        align-items: center;
+  .social-icons a{
+    color:#6b8eff;
+    margin-right: 10%;
     }
-    
-    h2 {
-        font-size: 1.8rem; /* Smaller font size for h2 */
-    }
+  
+  
+  @media (max-width: 768px) {
+  .contact-container {
+    padding: 20px; /* Reduce padding for smaller screens */
+    background-color: rgba(0, 0, 0, 1); /* Darker semi-transparent background on mobile */
+  }
 
-    p {
-        font-size: 1rem; /* Smaller font size for paragraphs */
-    }
+  h2 {
+    font-size: 1.8em; /* Adjust heading size */
+  }
+  h3{
+    margin-bottom: 0;
+  }
 
-    .social-icons a {
-        font-size: 1.25rem; /* Smaller icon size */
-    }
+  .contact-item {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: flex-start; /* Align items to the left */
+    padding: 10px; /* Reduce padding */
+  }
+  .contact-item h3{
+    flex: 0 0 0;
+  }
+
+  .number-item {
+    margin-left: 0; /* Remove margin on mobile */
+  }
+
+  .name {
+    font-size: 1.1em; /* Slightly smaller name on mobile */
+  }
+
+  .role {
+    font-size: 0.75em; /* Smaller role font size on mobile */
+  }
+
+  .social-icons {
+    flex-direction: column; /* Stack social icons vertically on mobile */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .social-icons a {
+    color:#6b8eff;
+    margin-bottom: 5px; /* Space between icons on mobile */
+  }
 }
