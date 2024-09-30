@@ -26,7 +26,7 @@ const Contact = () => {
         <p>English, Portuguese and Spanish</p>
       </div>
       <div className='contact-item'>
-      <h3>Email</h3><a href="mailto:bubtrader@gmail.com">bubtrader@gmail.com</a>
+      <h3>Email</h3><a href="mailto:bubetrader@gmail.com">bubetrader@gmail.com</a>
       </div>
       <div className='contact-item'>
         <h3>SOCIAL</h3>
